@@ -1,0 +1,40 @@
+test_average (__main__.TestExercice) ... ok
+test_to_celsius (__main__.TestExercice) ... ok
+test_to_degrees (__main__.TestExercice) ... FAIL
+test_to_farenheit (__main__.TestExercice) ... ok
+test_to_radians (__main__.TestExercice) ... ERROR
+
+======================================================================
+ERROR: test_to_radians (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 37, in test_to_radians
+    output = [exercice.to_radians(*v) for v in values]
+  File "test_exercice.py", line 37, in <listcomp>
+    output = [exercice.to_radians(*v) for v in values]
+  File "/home/runner/work/c03_ch3_exercices-MaxRonce/c03_ch3_exercices-MaxRonce/exercice.py", line 15, in to_radians
+    math.radians(angle_deg)
+NameError: name 'angle_deg' is not defined
+
+======================================================================
+FAIL: test_to_degrees (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 59, in test_to_degrees
+    self.assertListEqual(
+AssertionError: Lists differ: [(0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.[20 chars]0.0)] != [(79.0980174562859, 5.881047377154118, 29.6[197 chars]998)]
+
+First differing element 0:
+(0.0, 0.0, 0.0)
+(79.0980174562859, 5.881047377154118, 29.612494192724625)
+
+- [(0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0)]
++ [(79.0980174562859, 5.881047377154118, 29.612494192724625),
++  (-278.1960349125718, 48.23790524569176, 0.7750116145507491),
++  (257.74504364071475, -15.297381557114704, 44.031235481811564),
++  (213.95544569810457, -2.673258113725865, 23.057550624127998)] : Mauvais calcul de radians -> degres
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+FAILED (failures=1, errors=1)
